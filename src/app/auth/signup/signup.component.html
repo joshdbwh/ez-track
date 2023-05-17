@@ -1,1 +1,21 @@
-<p>signup works!</p>
+<div class="container">
+  <app-card outterTitle="Sign in to EzTrack">
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [formControlName]="email" />
+        <mat-error *ngIf="authForm.get('email')?.hasError('email') && authForm.get('email')?.touched">
+          Invalid email format
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="authForm.get('password')?.hasError('required') && authForm.get('password')?.touched">
+          Password required
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary" [disabled]="authForm.invalid">Sign in</button>
+    </form>
+  </app-card>
+</div>

@@ -1,0 +1,11 @@
+
+.card-container {
+  @apply flex flex-col items-center;
+}
+
+.outter-title {
+  @apply text-color-primary-text text-xl font-light;
+}
+.mat-mdc-card {
+  @apply bg-color-surface border-[1px] border-color-border;
+}

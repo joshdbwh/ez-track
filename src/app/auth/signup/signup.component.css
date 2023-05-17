@@ -1,0 +1,4 @@
+
+.container {
+  @apply min-w-full min-h-full bg-color-canvas flex justify-center items-center;
+}
