@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+}
+
+.nav-panel {
+  border: 1px solid blue;
+  min-width: 256px;
+}
+.content {
+  border: 1px dashed #000;
+  width: 100%
+}

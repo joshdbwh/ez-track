@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-toolbar class="toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>EzTrack</span>
+  </mat-toolbar>
+  <div class="content">
+  <mat-sidenav-container>
+    <mat-sidenav
+      class="sidenav"
+      #sidenav
+      mode="over"
+      [fixedInViewport]="true"
+      [fixedTopGap]="46">
+      <mat-nav-list>
+        <a *ngFor="let parent of parentRoutes"
+            mat-list-item
+            tabindex="-1"
+            (click)="sidenav.close()"
+            routerLink="/{{ parent }}">
+          {{ parent.split('/')[1] | titlecase }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-content-shell></app-content-shell>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  </div>
+</div>

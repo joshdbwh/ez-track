@@ -1,6 +1,12 @@
 import { Route } from '@angular/router';
-import { SignupComponent } from './auth/signup/signup.component';
 
 export const appRoutes: Route[] = [
-  { path: 'signup', component: SignupComponent },
+  {
+    path: 'link',
+    loadChildren: () => import('./domains/link/routes'),
+  },
+  {
+    path: 'budget',
+    loadChildren: () => import('./domains/budget/routes'),
+  },
 ];
